@@ -1,0 +1,15 @@
+<html>
+  <script type="module">
+    import PocketBase from 'https://cdn.jsdelivr.net/npm/pocketbase@0.21.0/+esm'
+
+    const url = 'https://starter-kit.pockethost.io/'
+    const client = new PocketBase(url)
+    const res = await client.send(`/api/health`)
+    document
+      .getElementById('output')
+      .append(`<div>${JSON.stringify(res)}</div>`)
+  </script>
+  <body>
+    <div id="output"></div>
+  </body>
+</html>
